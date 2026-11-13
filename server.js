@@ -18,15 +18,18 @@ app.get("/ping", (req, res) => {
 });
 
 app.get("/citations", (req, res) => {
-  // TODO : renvoyer le tableau de citations avec res.json().
-  res.status(501).json({ message: "À compléter" });
+  res.json(citations);
 });
+  // TODO : renvoyer le tableau de citations avec res.json().
 
 app.use((req, res) => {
-  // TODO : renvoyer un statut 404 et le message « Route introuvable » en JSON.
-  res.status(501).json({ message: "À compléter" });
+  res.status(404).json({ message: "Route introuvable" });
 });
+  // TODO : renvoyer un statut 404 et le message « Route introuvable » en JSON.
 
 app.listen(3000, () => {
   console.log("Serveur disponible sur http://localhost:3000");
 });
+
+
+
